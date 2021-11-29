@@ -5,6 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require ('express-session');
 
+
+require('dotenv').config(); //config es un metodo para levantar la BD,desde .env y bd.js
+
+var pool = require('./models/bd')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var nosotrosRouter= require('./routes/nosotros');
@@ -37,6 +42,28 @@ app.use('/users', usersRouter);
 app.use('/nosotros', nosotrosRouter);
 app.use('/servicios', serviciosRouter);
 app.use('/contacto', contactoRouter);
+
+
+//SELECT
+pool.query('select * from empleados').then (function (resultados){
+  console.log(resultados)
+});
+//FIN SELECT
+
+//INSERT
+var obj ={
+  nombre: 'Juan',
+  apellido: 'Lopez',
+  trabajo: 'docente',
+  edad: 38,
+  salario: 15000,
+  mail: 'juanlopez@gmail.com'
+}
+pool.query('insert into empleados set ?', [obj]).then(function(resultados){
+  console.log(resultados)
+});
+//FIN INSERT
+
 
 
 app.get('/', function(req , res){
