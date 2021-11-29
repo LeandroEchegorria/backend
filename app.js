@@ -16,6 +16,8 @@ var nosotrosRouter= require('./routes/nosotros');
 var serviciosRouter= require('./routes/servicios');
 var contactoRouter= require('./routes/contacto');
 
+var loginRouter=require('./routes/admin/login');
+
 var app = express();
 
 // view engine setup
@@ -42,6 +44,8 @@ app.use('/users', usersRouter);
 app.use('/nosotros', nosotrosRouter);
 app.use('/servicios', serviciosRouter);
 app.use('/contacto', contactoRouter);
+
+app.use('/admin/login', loginRouter);
 
 
 //SELECT
