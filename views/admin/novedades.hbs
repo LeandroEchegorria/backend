@@ -1,9 +1,42 @@
-<h1>Sección en construcción</h1>
-<h2>...Proximamente novedades</h2>
+
 <link rel="stylesheet" href="/public/stylesheets/style.css">
 
-<div>
-    <p>Hola {{usuario}} <a href="/admin/login/logout">Cerrar sesión <i></i></a>
+<div class="contenedor_nov">
+    
+    <div class="row">
+        <p>Hola {{usuario}} <a href="/admin/login/logout">Cerrar sesión <i></i></a></p>
+    </div>
 
-    </p>
+    <div class="row">
+        <div>
+            <h2>Listado de novedades</h2>
+        </div>
+        <div>
+            <a href="/admin/novedades/agregar"> <i aria-hidden="true"></i>Nuevo</a>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Titulo</th>
+                <th>Subtitulo</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+        {{#each novedades}}
+            <tr>            
+                <th> {{id}} </th>
+                <td> {{titulo}} </td>
+                <td> {{subtitulo}} </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    
+    </table>
+    
+
 </div>
