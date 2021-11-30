@@ -1,0 +1,15 @@
+<link rel='stylesheet' href='/public/stylesheets/style.css' />
+<h1>Estas en la pagina de LOGIN</h1>
+<h2>Por favor inicie sesión</h2>
+<div class="contenedor_form">
+    <form action="/admin/login" method="post">
+        <label for="usuario">USUARIO:</label> 
+        <input type="text" id="inputUser" name="usuario"> <br> <br>
+        <label for="password">CONTRASEÑA:</label>
+        <input type="password" id="inputPassword" name="password"> <br> <br>
+        <button type="submit">Ingresar</button>
+    </form>
+    {{#if error}}
+    <p>Usuario o contraseña incorrecta</p>
+    {{/if}}
+</div>

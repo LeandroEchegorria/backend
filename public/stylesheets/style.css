@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+.contenedor_form{
+  width: 30%;
+  padding: 20px;
+  background-color: lightslategray;
+}
