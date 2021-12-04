@@ -14,6 +14,7 @@
         <div>
             <a href="/admin/novedades/agregar"> <i aria-hidden="true"></i>Nuevo</a>
         </div>
+
     </div>
 
     <table>
@@ -32,6 +33,11 @@
                 <th> {{id}} </th>
                 <td> {{titulo}} </td>
                 <td> {{subtitulo}} </td>
+                <td>
+                    <div> 
+                        <a href="/admin/novedades/eliminar/{{id}}"> <i aria-hidden="true"></i>Eliminar</a>
+                    </div>
+                </td>
             </tr>
         {{/each}}
         </tbody>
