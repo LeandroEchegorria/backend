@@ -65,7 +65,7 @@ app.use('/admin/novedades',secured, adminRouter);
 
 
 //SELECT
-pool.query('select * from empleados').then (function (resultados){
+pool.query('select * from novedades').then (function (resultados){
   console.log(resultados)
 });
 //FIN SELECT
