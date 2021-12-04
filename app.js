@@ -4,8 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require ('express-session');
-
 var fileUpload = require ('express-fileupload');
+var cors = require ('cors');
 
 
 
@@ -22,6 +22,8 @@ var contactoRouter= require('./routes/contacto');
 
 var loginRouter=require('./routes/admin/login');
 var adminRouter=require('./routes/admin/novedades');
+
+var apiRouter = require ('./routes/api');
 
 var app = express();
 
@@ -62,7 +64,7 @@ app.use(fileUpload({
 }));
 
 
-//app.use('/', indexRouter);
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/nosotros', nosotrosRouter);
 app.use('/servicios', serviciosRouter);
@@ -70,6 +72,9 @@ app.use('/contacto', contactoRouter);
 
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades',secured, adminRouter);
+
+app.use('/api', cors() , apiRouter);
+
 
 
 //SELECT
