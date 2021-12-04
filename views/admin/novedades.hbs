@@ -21,8 +21,9 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Titulo</th>
-                <th>Subtitulo</th>
+                <th>Titulo</th>               
+                <th>Imagen</th>
+                <th>Acciones</th>
             </tr>
 
         </thead>
@@ -32,7 +33,9 @@
             <tr>            
                 <th> {{id}} </th>
                 <td> {{titulo}} </td>
-                <td> {{subtitulo}} </td>
+     
+                <td> {{{imagen}}} </td>
+                                
                 <td>
                     <div> 
                         <a href="/admin/novedades/eliminar/{{id}}"> <i aria-hidden="true"></i>Eliminar</a>
@@ -41,6 +44,7 @@
                         <a href="/admin/novedades/modificar/{{id}}"> <i aria-hidden="true"></i>Modificar</a>
                     </div>
                 </td>
+
             </tr>
         {{/each}}
         </tbody>

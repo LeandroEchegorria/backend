@@ -1,5 +1,5 @@
 <h3>Modificar una novedad</h3>
-<form action="/admin/novedades/modificar" method="post">
+<form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
     <input type="hidden" value="{{novedad.id}}" name="id" placeholder="Titulo">
        
     <div>
@@ -11,6 +11,15 @@
     <div>
         <textarea name="cuerpo"  placeholder="Cuerpo">{{novedad.cuerpo}}</textarea>
     </div>
+
+    <div>    
+        <label>Imagen: <input type="file" name="imagen" id="imagen"/></label>
+        <label>
+            <input type="checkbox" name="img_delete" id="img_delete" value="1"/>Quitar imagen actual
+        </label>
+        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+    </div>
+
     <button type="submit">Modificar</button>
 
 </form>

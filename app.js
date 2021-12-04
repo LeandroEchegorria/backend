@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require ('express-session');
 
+var fileUpload = require ('express-fileupload');
+
+
 
 require('dotenv').config(); //config es un metodo para levantar la BD,desde .env y bd.js
 
@@ -52,6 +55,11 @@ secured = async (req,res,next) => {
     console.log(error);
   }
 }
+
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
 
 
 //app.use('/', indexRouter);
